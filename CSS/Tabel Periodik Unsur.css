@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 7px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #ede1d5;
+  text-align: center;
+  justify-content: center;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: black;
+  border: none;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #a36691;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0.5em auto 0;
+  font: 700 3em sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.periodic-table {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+tr td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+td:hover {
+  border: 3px solid white;
+  background: blue;
+}
+
+[data-tooltip] {
+  position: relative;
+  cursor: default;
+}
+
+[data-tooltip]::after {
+  position: absolute;
+  width: 250px;
+  left: calc(50% - 123px);
+  bottom: 125%;
+  text-align: center;
+  box-sizing: border-box;
+
+  content: attr(data-tooltip);
+  color: black;
+  background: white;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  font-weight: normal;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s, transform 0.2s;
+}
+
+[data-tooltip]:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 320px) {
+  .periodic-table,
+  table {
+    width: 10%;
+    height: 10%;
+  }
+}
